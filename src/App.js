@@ -222,7 +222,7 @@ function App() {
             multiple
             type="file"
           />
-          <Button variant="outlined" style={{ width: "100%" }}>
+          <Button variant="outlined" component="span" style={{ width: "100%" }}>
             <MdOutlineFileUpload style={{ width: 40, height: 20 }} />
             Load
           </Button>
