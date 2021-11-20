@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/toddle/static/css/main.b7296a4c.chunk.css",
-    "main.js": "/toddle/static/js/main.03064c98.chunk.js",
-    "main.js.map": "/toddle/static/js/main.03064c98.chunk.js.map",
+    "main.js": "/toddle/static/js/main.362b94a2.chunk.js",
+    "main.js.map": "/toddle/static/js/main.362b94a2.chunk.js.map",
     "runtime-main.js": "/toddle/static/js/runtime-main.34a45c61.js",
     "runtime-main.js.map": "/toddle/static/js/runtime-main.34a45c61.js.map",
     "static/js/2.f28181a8.chunk.js": "/toddle/static/js/2.f28181a8.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.34a45c61.js",
     "static/js/2.f28181a8.chunk.js",
     "static/css/main.b7296a4c.chunk.css",
-    "static/js/main.03064c98.chunk.js"
+    "static/js/main.362b94a2.chunk.js"
   ]
 }
