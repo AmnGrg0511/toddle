@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/toddle/static/css/main.b7296a4c.chunk.css",
-    "main.js": "/toddle/static/js/main.362b94a2.chunk.js",
-    "main.js.map": "/toddle/static/js/main.362b94a2.chunk.js.map",
+    "main.css": "/toddle/static/css/main.b2be616a.chunk.css",
+    "main.js": "/toddle/static/js/main.43ca7f93.chunk.js",
+    "main.js.map": "/toddle/static/js/main.43ca7f93.chunk.js.map",
     "runtime-main.js": "/toddle/static/js/runtime-main.34a45c61.js",
     "runtime-main.js.map": "/toddle/static/js/runtime-main.34a45c61.js.map",
-    "static/js/2.f28181a8.chunk.js": "/toddle/static/js/2.f28181a8.chunk.js",
-    "static/js/2.f28181a8.chunk.js.map": "/toddle/static/js/2.f28181a8.chunk.js.map",
+    "static/js/2.8200088f.chunk.js": "/toddle/static/js/2.8200088f.chunk.js",
+    "static/js/2.8200088f.chunk.js.map": "/toddle/static/js/2.8200088f.chunk.js.map",
     "index.html": "/toddle/index.html",
-    "static/css/main.b7296a4c.chunk.css.map": "/toddle/static/css/main.b7296a4c.chunk.css.map",
-    "static/js/2.f28181a8.chunk.js.LICENSE.txt": "/toddle/static/js/2.f28181a8.chunk.js.LICENSE.txt"
+    "static/css/main.b2be616a.chunk.css.map": "/toddle/static/css/main.b2be616a.chunk.css.map",
+    "static/js/2.8200088f.chunk.js.LICENSE.txt": "/toddle/static/js/2.8200088f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.34a45c61.js",
-    "static/js/2.f28181a8.chunk.js",
-    "static/css/main.b7296a4c.chunk.css",
-    "static/js/main.362b94a2.chunk.js"
+    "static/js/2.8200088f.chunk.js",
+    "static/css/main.b2be616a.chunk.css",
+    "static/js/main.43ca7f93.chunk.js"
   ]
 }
