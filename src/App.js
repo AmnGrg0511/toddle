@@ -14,7 +14,7 @@ import {
 
 function App() {
   const [active, setActive] = useState(-1);
-  const [base, setBase] = useState(-1);
+  const [base, setBase] = useState(-2);
   const [focus, setFocus] = useState(0);
   const [data, setData] = useState([{ title: "", depth: 0 }]);
   const lastRef = useRef(null);
@@ -25,7 +25,6 @@ function App() {
 
   const treeify = (data, depth = 0) => {
     const tree = [];
-    console.log({ data, tree, depth });
     for (let i = 0; i < data.length; i++) {
       if (data[i].depth === depth) {
         data[i].childs = treeify(data.slice(i, part(data, i)), depth + 1);
@@ -37,7 +36,6 @@ function App() {
 
   const datafy = (tree) => {
     const data = [];
-    console.log({ data, tree });
     for (let i = 0; i < tree.length; i++) {
       data.push({ title: tree[i].title, depth: tree[i].depth });
       data.push(...datafy(tree[i].childs));
@@ -68,7 +66,7 @@ function App() {
   return (
     <div
       onDragEnd={() => {
-        if (active !== -1 && base !== -1)
+        if (active !== -1 && base !== -2)
           setData((prev) => {
             const p = part(data, active);
             const temp = prev.slice(active, p);
@@ -76,7 +74,7 @@ function App() {
             let newBase = active <= base ? base + 1 - p + active : base + 1;
             return [...prev.slice(0, newBase), ...temp, ...prev.slice(newBase)];
           });
-        setBase(-1);
+        setBase(-2);
         setActive(-1);
       }}
       style={{
@@ -86,13 +84,12 @@ function App() {
     >
       <div
         style={{
-          borderBottom: "4px solid #eee",
           display: "flex",
         }}
       >
         <textarea
           rows="1"
-          defaultValue={"Mathematics"}
+          defaultValue="Title"
           style={{
             fontSize: 30,
             fontWeight: "bold",
@@ -103,6 +100,21 @@ function App() {
           }}
         />
       </div>
+      <div
+        onDragOver={() => {
+          if (
+            data[active].depth - 1 <= 0 &&
+            (!data[0] || data[0].depth <= data[active].depth)
+          )
+            setBase(-1);
+        }}
+        style={{
+          width: "100%",
+          height: base === -1 ? 40 : 4,
+          backgroundColor: base === -1 ? "#bde0f5" : "#eee",
+          transition: "all ease .2s",
+        }}
+      />
       {data.map(({ title, depth }, i) => (
         <div>
           <div
@@ -118,10 +130,10 @@ function App() {
             }}
           >
             <div>
-              <IconButton onClick={() => {}}>
+              <IconButton size="small" onClick={() => { }}>
                 <RiDragMove2Fill />
               </IconButton>
-              <IconButton
+              <IconButton size="small"
                 onClick={() => {
                   if (i !== 0 && depth > 0) {
                     setData((prev) =>
@@ -136,12 +148,12 @@ function App() {
               >
                 <RiArrowLeftLine />
               </IconButton>
-              <IconButton
+              <IconButton size="small"
                 onClick={() => {
                   if (i !== 0 && depth <= data[i - 1].depth) {
                     setData((prev) =>
-                      prev.map((el, j) =>
-                        i === j ? { ...el, depth: el.depth + 1 } : el
+                      prev.map((e, j) =>
+                        i === j ? { ...e, depth: e.depth + 1 } : e
                       )
                     );
                   }
@@ -149,7 +161,7 @@ function App() {
               >
                 <RiArrowRightLine />
               </IconButton>
-              <IconButton
+              <IconButton size="small"
                 onClick={() =>
                   setData((prev) =>
                     prev.filter((e, j) => j < i || j >= part(prev, i))
@@ -162,9 +174,9 @@ function App() {
             <div
               style={{
                 height: 56,
-                width: 40,
+                width: 28,
                 backgroundColor: "#fafafa",
-                marginLeft: 15 + depth * 24,
+                marginLeft: 15 + depth * 14,
                 marginRight: 15,
               }}
             />
@@ -174,7 +186,7 @@ function App() {
               value={title}
               style={{
                 opacity: 1 - depth * 0.1,
-                fontSize: 26 - depth * 2.5,
+                fontSize: 1.75 - depth * .15625 + 'em',
               }}
               onChange={({ target: { value } }) => {
                 const lines = value.split("\n");

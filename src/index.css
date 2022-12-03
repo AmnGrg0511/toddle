@@ -19,5 +19,6 @@ textarea {
   padding: 10px;
   overflow: hidden;
   outline: none;
+  white-space: nowrap;
   flex: 1;
 }
